@@ -1,0 +1,104 @@
+@keyframes car-move-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+  }
+}
+
+@keyframes car-move-right {
+  0% {
+    transform: translateX(calc(100vw + 100px));
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes road-flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes wheel-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes car-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes headlight-glow {
+  0%, 100% {
+    opacity: 0.7;
+    box-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+  }
+}
+
+.animate-car-move-left {
+  animation: car-move-left 6s linear infinite, car-bounce 2s ease-in-out infinite;
+}
+
+.animate-car-move-right {
+  animation: car-move-right 8s linear infinite, car-bounce 2s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-road-flow {
+  animation: road-flow 1.5s linear infinite;
+}
+
+.animate-wheel-rotate {
+  animation: wheel-rotate 0.8s linear infinite;
+}
+
+.animate-headlight-glow {
+  animation: headlight-glow 1.5s ease-in-out infinite;
+}
+
+/* Hover effects */
+.animated-search-button:hover .animate-car-move-left {
+  animation-duration: 3s, 1s;
+}
+
+.animated-search-button:hover .animate-car-move-right {
+  animation-duration: 4s, 1s;
+}
+
+.animated-search-button:hover .animate-road-flow {
+  animation-duration: 0.8s;
+}
+
+.animated-search-button:hover .animate-wheel-rotate {
+  animation-duration: 0.4s;
+}
+
+/* Enhanced road animation */
+.road-line {
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 20px,
+    #fbbf24 20px,
+    #fbbf24 40px
+  );
+} 
